@@ -5,16 +5,17 @@ const fetchButton = document.getElementById('fetch-button')
 const cityInput = document.getElementById('city');
 const searchHistoryList = document.getElementById('search-history-list');
 
+//This function will fetch data from any city typed and display it on screen.
 function getWeatherData(cityName){
     const apiKey = 'e1289235d4638591919c1af0c4190754';
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=${apiKey}&units=imperial`;
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&APPID=${apiKey}&units=imperial`;
-   
+ //fetch request below fetches current weather data  
     fetch(weatherUrl)
     .then(response => response.json())
     .then(data => displayCurrentWeather(data))
     
-
+//fetch request below searches future weather data.
     fetch(forecastUrl)
     .then(response => response.json())
     .then(data => displayForecast(data))
@@ -72,7 +73,7 @@ function displayForecast(data) {
         }
     });
 }
-
+// function loads search history from localStorage and displays it.
 function loadSearchHistory() {
     const searches = JSON.parse(localStorage.getItem('searchHistory')) || [];
     searchHistoryList.innerHTML = ''; 
@@ -85,6 +86,7 @@ function loadSearchHistory() {
 }
 
 
+// function saves a new search to localStorage and updates display.
 function saveSearchHistory(city) {
     const searches = JSON.parse(localStorage.getItem('searchHistory')) || [];
     if (!searches.includes(city)) { 

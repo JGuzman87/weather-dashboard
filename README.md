@@ -17,6 +17,7 @@ The purspose of this project is to get weather data by borrowing openweather.com
 
 Website:
 
+https://jguzman87.github.io/weather-dashboard/
 
 ![alt text](image.png)
 
