@@ -25,7 +25,7 @@ input[type="text"], button {
     margin: 10px 0 20px;
     padding: 5px;
     display: block;
-    width: 15%;
+    width: 50%;
     
 }
 
@@ -91,7 +91,7 @@ weather-block, .forecast-container {
 .search-history ul {
     list-style-type: none;
     padding: 0;
-    width: 10%;
+    width: 30%;
     font-size: small;
 }
 
@@ -120,3 +120,9 @@ weather-block, .forecast-container {
     width: 70%;
 }
 
+@media (max-width: 768px) {
+    .container {
+        flex-direction: row;
+        padding: 20px;
+    }
+}
